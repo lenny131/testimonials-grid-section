@@ -17,6 +17,7 @@ body {
 main {
     display: grid;
     grid-template-columns: 100%;
+    grid-auto-flow: dense;
     gap: presets.$spacing-400;
     margin-inline: presets.$spacing-400;
     margin-block: presets.$spacing-1000;
@@ -160,5 +161,45 @@ footer {
 
     a {
         color: presets.$purple-500;
+    }
+}
+
+@media (width >= 48rem) {
+    main {
+        grid-template-columns: 1fr 1fr;
+        margin-inline: auto;
+        width: 40.4375rem;
+    }
+
+    .review-card {
+        &:nth-of-type(1) {
+            // https://stackoverflow.com/a/47964080
+            background: url("/images/bg-pattern-quotation.svg"), linear-gradient(to right, presets.$purple-500, presets.$purple-500);
+            background-repeat: no-repeat;
+            background-position: 90% 0%;
+        }
+
+        &:nth-of-type(1), &:nth-of-type(4), &:nth-of-type(5) {
+            grid-column: auto / span 2;
+        }
+    }
+}
+
+@media (width >= 90rem) {
+    main {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        width: 69.625rem;
+        
+    }
+
+    .review-card {
+        &:nth-of-type(3) {
+            grid-row: 2 / auto;
+        }
+
+        &:nth-of-type(5) {
+            grid-column: 4 / span 1;
+            grid-row: auto / span 2;
+        }
     }
 }
