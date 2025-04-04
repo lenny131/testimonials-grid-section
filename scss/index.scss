@@ -174,7 +174,7 @@ footer {
     .review-card {
         &:nth-of-type(1) {
             // https://stackoverflow.com/a/47964080
-            background: url("/images/bg-pattern-quotation.svg"), linear-gradient(to right, presets.$purple-500, presets.$purple-500);
+            background: url("../images/bg-pattern-quotation.svg"), linear-gradient(to right, presets.$purple-500, presets.$purple-500);
             background-repeat: no-repeat;
             background-position: 90% 0%;
         }
